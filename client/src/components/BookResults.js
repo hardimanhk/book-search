@@ -6,7 +6,7 @@ function BookResults(props) {
       {props.results.map(result => (
         <li key={result} className="list-group-item">
           <h2>{result.title}</h2>
-          <p>Written By: {result.author}</p>
+          <p>Written By: {result.author[0]}</p>
           <div>
           <img alt="Book" src={result.image} className="img-fluid" />
           <p>{result.description}</p>
