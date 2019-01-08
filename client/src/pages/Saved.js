@@ -28,21 +28,9 @@ class Saved extends Component {
       .catch(err => console.log(err));
   };
 
-  saveBook = (title, author, description, image, link) => {
-    API.saveBook({
-      title: title,
-      authors: author,
-      description: description,
-      image: image,
-      link: link
-    })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
-  }
-
   render() {
     return(
-      <BookResults results={this.state.books} saveBook={this.saveBook}/>
+      <BookResults results={this.state.books} deleteBook={this.deleteBook}/>
     )
   }
 }
