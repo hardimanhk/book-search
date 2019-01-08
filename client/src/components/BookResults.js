@@ -1,7 +1,6 @@
 import React from "react";
 
 function BookResults(props) {
-  console.info(props.results);
   let saveButton = false;
   if (props.saveBook) {
     saveButton = true;

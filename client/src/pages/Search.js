@@ -20,7 +20,6 @@ class Search extends Component {
         if (res.data.status === "error") {
           throw new Error(res.data.message);
         }
-        console.log(res.data.items);
         let resBooks = [];
         res.data.items.forEach(item => {
           let newBook = {
@@ -32,7 +31,6 @@ class Search extends Component {
           };
           resBooks.push(newBook);
         });
-        console.log(resBooks);
         this.setState({results: resBooks, error: ""});
       })
       .catch(err => this.setState({error: err.message}));
