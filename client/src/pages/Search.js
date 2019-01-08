@@ -25,7 +25,7 @@ class Search extends Component {
         res.data.items.forEach(item => {
           let newBook = {
             "title": item.volumeInfo.title,
-            "author": item.volumeInfo.authors,
+            "authors": item.volumeInfo.authors,
             "description": item.volumeInfo.description,
             "image": item.volumeInfo.imageLinks.thumbnail,
             "link": item.volumeInfo.previewLink
