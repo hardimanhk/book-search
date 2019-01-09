@@ -23,12 +23,27 @@ class Search extends Component {
         let resBooks = [];
         res.data.items.forEach(item => {
           let newBook = {
-            "title": item.volumeInfo.title,
-            "authors": item.volumeInfo.authors,
-            "description": item.volumeInfo.description,
-            "image": item.volumeInfo.imageLinks.thumbnail,
-            "link": item.volumeInfo.previewLink
+            "title": "Unknown",
+            "authors": ["Unknown"],
+            "description": "Unknown",
+            "image": "Unknown",
+            "link": "Unknown",
           };
+          if (item.volumeInfo.title) {
+            newBook.title = item.volumeInfo.title;
+          }
+          if (item.volumeInfo.authors) {
+            newBook.authors = item.volumeInfo.authors;
+          }
+          if (item.volumeInfo.description) {
+            newBook.description = item.volumeInfo.description;
+          }
+          if (item.volumeInfo.imageLinks.thumbnail) {
+            newBook.image = item.volumeInfo.imageLinks.thumbnail;
+          }
+          if (item.volumeInfo.previewLink) {
+            newBook.link = item.volumeInfo.previewLink;
+          }
           resBooks.push(newBook);
         });
         this.setState({results: resBooks, error: ""});
